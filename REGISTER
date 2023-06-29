@@ -1,0 +1,50 @@
+
+{% extends 'Etudiant/base.html' %}
+{% block content %}
+
+<div class="row" style="margin-left: -1%;">
+    <div class="col">
+        <h4 class="text-center alert alert-info" style="border: 1px inset blue">S'inscrire</h4>
+
+        <form action="" method="POST" style="background: linear-gradient(to bottom, rgba(57, 57, 243, 0.767), transparent, rgba(57, 57, 243, 0.767)); border: 1.5px solid rgba(85, 85, 231, 0.863); border-radius: 10px; padding: 5%;">
+            {%csrf_token%}
+            {{form.as_p}}
+
+            <input type="submit" class="btn btn-success" value = "Inscription" style="margin-bottom: 10%;">
+        </form>
+        
+    </div>
+    <div class="col-sm-4" style="margin-top: 31%;">
+        {% if messages %}
+        <ul class="text-center alert alert-danger" offset-1>
+            {% for message in messages %}
+                <li style="list-style: none;" {% if message.tags %} class="{{ message.tags }}" {% endif %} >{{ message }}</li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+        <a  class="btn btn-success" style="text-decoration: none; margin: 2%" href="{% url 'connextion' %}">J'ai déjà un compte.</a>
+        <a class="btn btn-warning" style="text-decoration: none; margin: 2%" href="{% url 'connextion' %}">Voir les autres inscrits</a>
+    </div>
+</div>
+{% endblock content %}
+
+
+
+
+
+
+
+
+
+<!--
+
+<table class="table-primary">...</table>
+<table class="table-secondary">...</table>
+<table class="table-success">...</table>
+<table class="table-danger">...</table>
+<table class="table-warning">...</table>
+<table class="table-info">...</table>
+<table class="table-light">...</table>
+<table class="table-dark">...</table>
+
+-->
