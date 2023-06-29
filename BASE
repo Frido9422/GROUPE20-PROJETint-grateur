@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'Etudiant/css/bootstrap.css' %}">
+    <title>Gestion du projet</title>
+</head>
+<body style="background: linear-gradient(to bottom, rgba(117, 213, 241, 0.966), rgba(61, 238, 229, 0.966));">
+    <div class="container mt-5">
+        <h4 class="text-center danger" style="margin-bottom: 4%;border-radius: 10px;border: 2px solid black; background: linear-gradient(to right, rgba(124, 236, 236, 0.61), rgba(85, 236, 247, 0.644));padding: 3%;margin-left: 2px;color: rgb(56, 185, 245); font-family:cursive;">TIMETABLE</h4>
+        {% block content %} {% endblock content%}
+    </div>
+    <script src="{% static 'Etudiant/js/bootstrap.js' %}"></script>
+    <script src="{% static 'Etudiant/js/jquery.js' %}"></script>
+    <script src="{% static 'Etudiant/js/popper.js' %}"></script>
+</body>
+</html>
